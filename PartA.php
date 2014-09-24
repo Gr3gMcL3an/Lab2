@@ -77,7 +77,7 @@ This is a pass by Reference:
 
 function byValue($string) //BY REFERENCE FUNCTION
 {
-    $string .= "...blah";
+    $string .= "...blah"; //
 }
 
 byValue($byValueString);
