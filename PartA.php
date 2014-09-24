@@ -116,6 +116,9 @@ $GLOBALS['age'] = 25;
 echo "<h1>Your are ". $age . " years old</h1>"
 ?>
 
+<h2>Step 4</h2>
+
+
 
 
 </body>
