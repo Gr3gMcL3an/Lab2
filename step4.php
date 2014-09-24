@@ -7,7 +7,7 @@
 
 <?php
 $zendVersion=zend_version();
-$phpVersion= phpversion();
+$phpVersion= phpversion(); //
 $mimeType =ini_get('default_mimetype');
 ?>
 
