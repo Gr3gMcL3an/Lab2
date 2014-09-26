@@ -5,12 +5,18 @@
 </head>
 <body>
 
-<form action="PartCStep1.php" method="post">
+<form action="PartCStep1.php" method="post"
+
+    enctype="multipart/form-data">
+
     First name: <input type="text" name="FirstName" value=""><br>
     Last name: <input type="text" name="LastName" value=""><br>
     Height in feet: <input type="text" name="feet" value=""><br>
     Height in inches: <input type="text" name="inches" value=""><br>
 
+
+    <p/>
+    Picture:<input type="file" name="userImage" />
     <p><input type="submit" name="Submit" value="Send Form"/></p>
 </form>
 
