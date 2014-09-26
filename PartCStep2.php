@@ -1,6 +1,5 @@
 <body>
 
-
 <?php
 //Aries     3 21 - 4 19
 //Taurus    4 20 - 5 20
@@ -15,11 +14,10 @@
 //Aquarius     01 20 - 02 18
 //Pisces       02 19 - 03 20
 
+$inputDayFormHtml=$_GET['birthDay'];
+$inputMonthFormHtml=$_GET['birthMonth'];
 
-
-
-
-function calcSign()
+function calcSign($inputDayForm,$inputMonthForm)
 {
 //signs
 //[00] = NAME
@@ -27,7 +25,6 @@ function calcSign()
 //[02] = start day
 //[03] = End month
 //[04]= End day
-
  $signs = array
  (
      array("Aquarius",     1, 20, 2, 18),
@@ -44,10 +41,8 @@ function calcSign()
      array("Cappricorn",   12,22,  1, 19)
 
  );
-
-
-    $inputDay=2;
-    $inputMonth=8;
+    $inputDay=$inputDayForm;
+    $inputMonth=$inputMonthForm;
 
     $start=0;
     $end=0;
@@ -57,37 +52,12 @@ function calcSign()
         $startMonth = $signs[$i][3];
         $endMonth = $signs[$i][1];
 
-       // if($signs[$i]$startMonth)
 
-      //  for($x=0; $x<5; $x++){
-          //  echo $signs[$i][1];
 
             if ($startMonth == $inputMonth)
             {
                 $start = $i;
-
-
-
-
-
-
-              //  echo "Start ". $signs[$i][0] ;
-                echo "<p>";
-
             }//end if
-
-        if(  $endMonth == $inputMonth)
-        {
-
-            $end = $i;
-
-          //  echo "end ". $signs[$i][0] ;
-            echo "<p>";
-        }
-
-
-
-     //   }//end for
 
     }//end for
 
@@ -96,19 +66,31 @@ function calcSign()
     if($inputDay > $signs[$start][4])
     {
         $take++;
+        if($take==12)
+        {
+            $take =0;
+        }
+
     }
 
-    echo "answer ". $signs[$take][0] ;
+    echo  $signs[$take][0] ;
+
+  //  return $signs[$take][0] ;
 
 //ADD CONDITION TO TURN TAKE TO 1 IF IT REACHES 11
 
-
-
+}
 
 ?>
 
 
+Hello, <?php echo $_GET['FirstName']?> <?php echo $_GET['LastName']?>!
+<p/>
+Your Zodiac sign is <?php calcSign($inputDayFormHtml,$inputMonthFormHtml) ?>
 
-<?php  calcSign()?>
+
+
+
+
 
 </body>
